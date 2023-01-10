@@ -24,6 +24,36 @@ module.exports = {
         exclude: /node_modules/,
         // loader를 배제시킬 파일 명시
       },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.css$/i,
+        use: [MiniCSSExtractPlugin.loader, 'css-loader'],
+      },
+      {
+        test: /\.(jpg|png|gif|svg|hdr)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'public/img/[name].[ext]',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(glb|gltf)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'public/gltf/[name].[ext]',
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
