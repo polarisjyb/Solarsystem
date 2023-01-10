@@ -23,6 +23,8 @@
   },
   "devDependencies": {
     "html-webpack-plugin": "^5.5.0",
-    "webpack-dev-server": "^4.11.1"
+    "webpack-bundle-analyzer": "^4.7.0",
+    "webpack-dev-server": "^4.11.1",
+    "webpack-merge": "^5.8.0"
   }
 }
