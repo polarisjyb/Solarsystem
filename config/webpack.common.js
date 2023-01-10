@@ -1,11 +1,28 @@
-const HtmlWebpackPlgin = require('html-webpack-plugin');
-const path =require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 const webpack = require('webpack');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 module.exports = {
   /* entry는 애플리케이션이 실행되며 webpack이 번들링을 시작하는 곳이다. */
   entry: `${path.resolve(__dirname, "../src")}/index.js`,
+  plugins: [
+    /*
+    플러그인(plugin)은 웹팩의 기본적인 동작에 추가적인 기능을 제공하는 속성이다.
+    로더랑 비교하면 로더는 파일을 해석하고 변환하는 과정에 관여하는 반면, 플러그인은 해당 결과물의 형태를 바꾸는 역할을 한다고 볼 수 있다.
+    
+    HtmlWebpackPlugin : 웹팩으로 빌드한 결과물로 HTML 파일을 생성해주는 플러그인
+    
+    ProgressPlugin : 웹팩의 빌드 진행율을 표시해주는 플러그인 (터미널에서 확인 가능)  
+    */
+    new HtmlWebpackPlugin({
+      template: "src/index.html",
+      filename: 'index.html',
+    }),
+    new webpack.ProgressPlugin(),
+    new CleanWebpackPlugin(),
+  ],
   module: {
     rules: [
       /*
@@ -25,14 +42,6 @@ module.exports = {
         // loader를 배제시킬 파일 명시
       },
       {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
-      },
-      {
-        test: /\.css$/i,
-        use: [MiniCSSExtractPlugin.loader, 'css-loader'],
-      },
-      {
         test: /\.(jpg|png|gif|svg|hdr)$/i,
         use: [
           {
@@ -43,33 +52,19 @@ module.exports = {
           },
         ],
       },
-      {
-        test: /\.(glb|gltf)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'public/gltf/[name].[ext]',
-            },
-          },
-        ],
-      },
+      // {
+      //   test: /\.(glb|gltf)$/i,
+      //   use: [
+      //     {
+      //       loader: 'file-loader',
+      //       options: {
+      //         name: 'public/gltf/[name].[ext]',
+      //       },
+      //     },
+      //   ],
+      // },
     ],
   },
-  plugins: [
-    /*
-    플러그인(plugin)은 웹팩의 기본적인 동작에 추가적인 기능을 제공하는 속성이다.
-    로더랑 비교하면 로더는 파일을 해석하고 변환하는 과정에 관여하는 반면, 플러그인은 해당 결과물의 형태를 바꾸는 역할을 한다고 볼 수 있다.
-    
-    HtmlWebpackPlugin : 웹팩으로 빌드한 결과물로 HTML 파일을 생성해주는 플러그인
-    
-    ProgressPlugin : 웹팩의 빌드 진행율을 표시해주는 플러그인 (터미널에서 확인 가능)  
-    */
-    new HtmlWebpackPlugin({
-      template: "public/index.html",
-    }),
-    new webpack.ProgressPlugin(),
-  ],
 
   // resolve는 모듈해석에 대한 설정으로 특정 모듈을 호출할 때 모듈을 찾는 위치를 변경할 수 있다.
   resolve: {
