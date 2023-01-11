@@ -1,0 +1,13 @@
+/* 스타일 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 테스트용 root 스타일 적용 */
+#root {
+  width: 100vw;
+  height: 100vh;
+  background-color: gray;
+}
