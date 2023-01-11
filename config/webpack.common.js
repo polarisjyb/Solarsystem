@@ -2,7 +2,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 module.exports = {
   /* entry는 애플리케이션이 실행되며 webpack이 번들링을 시작하는 곳이다. */
@@ -21,7 +20,6 @@ module.exports = {
       filename: 'index.html',
     }),
     new webpack.ProgressPlugin(),
-    new CleanWebpackPlugin(),
   ],
   module: {
     rules: [
@@ -51,6 +49,13 @@ module.exports = {
             },
           },
         ],
+      },
+      {
+        // loader를 적용시킬 파일들을 정규식으로 명시
+        test: /\.css$/i,
+        
+        //  use : 지정된 'loader'가 test에서 적용한 파일을 컴파일
+        use: ["style-loader", "css-loader"],
       },
       // {
       //   test: /\.(glb|gltf)$/i,
