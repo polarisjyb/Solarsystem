@@ -67,3 +67,5 @@ const animate = () => {
 
 animate();
 // animate() 함수가 실행되면서 애니메이션이 구현된 오브젝트가 브라우저에 출력된다.
+
+// webpack dev server ( npm run dev ), webpack prod ( npm run build 명령어 ) - dist 폴더 index.html 파일에서도 정상 출력 확인
