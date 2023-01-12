@@ -5,9 +5,15 @@
   box-sizing: border-box;
 }
 
-/* 테스트용 root 스타일 적용 */
-#root {
+body {
   width: 100vw;
   height: 100vh;
-  /* background-color: gray; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
 }
