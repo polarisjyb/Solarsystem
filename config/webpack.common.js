@@ -5,7 +5,7 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
   /* entry는 애플리케이션이 실행되며 webpack이 번들링을 시작하는 곳이다. */
-  entry: `${path.resolve(__dirname, "../src")}/index.js`,
+  entry: `${path.resolve(__dirname, "../src")}/three.js`,
   plugins: [
     /*
     플러그인(plugin)은 웹팩의 기본적인 동작에 추가적인 기능을 제공하는 속성이다.
