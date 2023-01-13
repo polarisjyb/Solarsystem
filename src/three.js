@@ -104,6 +104,10 @@ const init = () => {
   camera.lookAt(scene.position);
   // lookAt: 장면의 중앙을 가리키도록 한다. 기본값은 (0, 0, 0) 
 
+  // html 요소에 출력할 요소 추가
+  document.getElementById('root').appendChild(renderer.domElement);
+
+  renderer.render(scene, camera);
 };
 
 window.onload = init;
