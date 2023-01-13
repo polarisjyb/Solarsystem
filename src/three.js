@@ -67,6 +67,21 @@ const init = () => {
 
   scene.add(plane);
 
+  /* cube 생성 */
+  const cubeGeometry = new THREE.BoxGeometry(4, 4, 4);
+  const cubeMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000, wireframe: true });
+  // wireframe: true -> solid 오브젝트가 아닌, wireframe으로 렌더링 되도록 한다.
+
+  const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+
+  // cube 위치 지정
+  cube.position.x = -4;
+  cube.position.y = 3;
+  cube.position.z = 0;
+
+  // cube scene에 추가 
+  scene.add(cube);
+
 };
 
 window.onload = init;
