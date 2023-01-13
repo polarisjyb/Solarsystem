@@ -82,6 +82,20 @@ const init = () => {
   // cube scene에 추가 
   scene.add(cube);
 
+  /* Sphere 생성 */
+  const sphereGeometry = new THREE.SphereGeometry(4, 20, 20);
+  // SphereGeometry (반지름: float, 너비세그먼트: integer, 높이세그먼트: integer)
+  const sphereMaterial = new THREE.MeshBasicMaterial({ color: 0x7777ff, wireframe: true });
+  const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+
+  // sphere 위치 지정
+  sphere.position.x = 20;
+  sphere.position.y = 4;
+  sphere.position.z = 2;
+
+  // sphere scene에 추가 
+  scene.add(sphere);
+
 };
 
 window.onload = init;
