@@ -3,7 +3,7 @@ import './style.css'
 import * as THREE from 'three';
 
 const scene = new THREE.Scene();
-// 실제로 three.js 로 오브젝트를 표시하려면 장면과 카메라 및 렌더러, 3가지가 필요합니다.
+// 실제로 three.js 로 오브젝트를 표시하려면 장면과 카메라 및 렌더러, 3가지가 필요하다.
 
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 // camera - 화면에 어떤 것이 렌더링될 것인지 결정한다.
