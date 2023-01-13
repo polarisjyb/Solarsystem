@@ -34,6 +34,12 @@ const init = () => {
   updateStyle을 false로 설정하면 출력 캔버스의 스타일이 변경되지 않는다.
   */
 
+  const axes = new THREE.AxesHelper(20);
+  // x축 (빨간색), y축 (녹색), z축 (파란색) 이 있다.
+  // 오브젝트가 3차원 공간에서 렌더링 되는 위치를 확인하는 유용한 디버깅 툴이다.
+
+  scene.add(axes);
+  
 };
 
 window.onload = init;
