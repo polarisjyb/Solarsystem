@@ -24,4 +24,8 @@ threejs-1 브랜치에서 three.js 공식 문서를 참고로 간단한 BoxGeome
 webpack dev server ( npm run dev ), webpack prod ( npm run build ) 모두 브라우저 정상 출력되는 것을 확인했습니다.
 
 -------------------------------------------------------
+23/01/13
 
+threejs-2 브랜치에서 간단하게 평면과 그 위에 BoxGeometry 와 SphereGeometry를 활용하여 wireframe 형태로 된 오브젝트를 생성, 출력했습니다.
+camera가 오브젝트를 향하도록 하기 위해 lookAt 메서드로 장면의 중앙을 가리키도록 했습니다.
+html 요소 root 태그 안에 렌더링이 되도록 설정했습니다.
