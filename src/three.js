@@ -96,6 +96,14 @@ const init = () => {
   // sphere scene에 추가 
   scene.add(sphere);
 
+  /* camera 추가 */
+  // x, y, z 속성을 사용해 카메라가 장면의 위에 떠다니도록 했다.
+  camera.position.x = -30;
+  camera.position.y = 40;
+  camera.position.z = 30;
+  camera.lookAt(scene.position);
+  // lookAt: 장면의 중앙을 가리키도록 한다. 기본값은 (0, 0, 0) 
+
 };
 
 window.onload = init;
