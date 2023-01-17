@@ -17,7 +17,7 @@ const init = () => {
   const renderer = new THREE.WebGLRenderer(/* { antialias: true } */);
   // WebGLRenderer 는 WebGL을 사용하여 scene을 렌더링한다.
 
-  renderer.setClearColor(new THREE.Color(0xEEEEEE));
+  // renderer.setClearColor(new THREE.Color(0xEEEEEE));
   // 헥스 코드를 사용하여 색 지정
   
   /*
