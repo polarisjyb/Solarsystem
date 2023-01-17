@@ -17,7 +17,7 @@ const init = () => {
   const renderer = new THREE.WebGLRenderer(/* { antialias: true } */);
   // WebGLRenderer 는 WebGL을 사용하여 scene을 렌더링한다.
 
-  // renderer.setClearColor(new THREE.Color(0xEEEEEE));
+  renderer.setClearColor(new THREE.Color(0xEEEEEE));
   // 헥스 코드를 사용하여 색 지정
   
   /*
@@ -40,6 +40,21 @@ const init = () => {
 
   scene.add(axes);
 
+  /* cube 생성 */
+  const cubeGeometry = new THREE.BoxGeometry(4, 4, 4);
+  const cubeMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000, wireframe: true });
+  // wireframe: true -> solid 오브젝트가 아닌, wireframe으로 렌더링 되도록 한다.
+
+  const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+
+  // cube 위치 지정
+  cube.position.x = -4;
+  cube.position.y = 3;
+  cube.position.z = 0;
+
+  // cube scene에 추가 
+  scene.add(cube);
+
   /* Sphere 생성 */
   const sphereGeometry = new THREE.SphereGeometry(4, 20, 20);
   // SphereGeometry (반지름: float, 너비세그먼트: integer, 높이세그먼트: integer)
@@ -51,21 +66,32 @@ const init = () => {
   sphere.position.y = 4;
   sphere.position.z = 2;
 
+  
   // sphere scene에 추가 
   scene.add(sphere);
-
+  
   /* camera 추가 */
   // x, y, z 속성을 사용해 카메라가 장면의 위에 떠다니도록 했다.
   camera.position.x = -30;
-  camera.position.y = 40;
-  camera.position.z = 30;
+  camera.position.y = 20;
+  camera.position.z = 40;
   camera.lookAt(scene.position);
   // lookAt: 장면의 중앙을 가리키도록 한다. 기본값은 (0, 0, 0) 
-
+  
   // html 요소에 출력할 요소 추가
   document.getElementById('root').appendChild(renderer.domElement);
-
+  
+  // cube, sphere rotate animation 추가
+  const animate = () => {
+  cube.rotation.x -= 0.003;
+  cube.rotation.z += 0.003;
+  sphere.rotation.x += 0.003;
+  sphere.rotation.y += 0.003;
+  requestAnimationFrame(animate);
   renderer.render(scene, camera);
+  };
+  
+  animate(sphere);
 };
 
 window.onload = init;
