@@ -29,3 +29,9 @@ webpack dev server ( npm run dev ), webpack prod ( npm run build ) 모두 브라
 threejs-2 브랜치에서 간단하게 평면과 그 위에 BoxGeometry 와 SphereGeometry를 활용하여 wireframe 형태로 된 오브젝트를 생성, 출력했습니다.
 camera가 오브젝트를 향하도록 하기 위해 lookAt 메서드로 장면의 중앙을 가리키도록 했습니다.
 html 요소 root 태그 안에 렌더링이 되도록 설정했습니다.
+
+-------------------------------------------------------
+23/01/18
+
+threejs-3 브랜치에서 plane (평면 바닥)을 삭제하고 간단하게 회전 애니메이션을 구현했습니다.
+다음 작업은 SphereGeomtery를 사용하지 않고 텍스처 매핑을 진행할 예정입니다.
