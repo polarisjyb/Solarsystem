@@ -91,7 +91,7 @@ const init = () => {
   renderer.render(scene, camera);
   };
   
-  animate(sphere);
+  animate();
 };
 
 window.onload = init;
