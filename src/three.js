@@ -91,3 +91,9 @@ function animate() {
   renderer.render(scene, camera);
 }
 animate();
+
+/* camera 추가 */
+camera.position.x = 10;
+camera.position.y = 20;
+camera.position.z = 20;
+camera.lookAt(scene.position);
