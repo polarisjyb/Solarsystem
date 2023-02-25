@@ -8,6 +8,10 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('root').appendChild(renderer.domElement);
 
+// x축 (빨간색), y축 (녹색), z축 (파란색) 생성
+const axes = new THREE.AxesHelper(20);
+scene.add(axes);
+
 // 태양 생성
 const sunGeometry = new THREE.SphereGeometry(1, 32, 32);
 const sunMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00 });
