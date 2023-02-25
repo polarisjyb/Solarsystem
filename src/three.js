@@ -74,3 +74,20 @@ const neptuneMaterial = new THREE.MeshBasicMaterial({ color: 0x808080 });
 const neptune = new THREE.Mesh(neptuneGeometry, neptuneMaterial);
 neptune.position.set(0, -16, 0);
 scene.add(neptune);
+
+// 행성 애니메이션
+function animate() {
+  requestAnimationFrame(animate);
+
+  mercury.rotation.y += 0.01;
+  venus.rotation.y += 0.01;
+  earth.rotation.y += 0.01;
+  mars.rotation.y += 0.01;
+  jupiter.rotation.y += 0.01;
+  saturn.rotation.y += 0.01;
+  uranus.rotation.y += 0.01;
+  neptune.rotation.y += 0.01;
+
+  renderer.render(scene, camera);
+}
+animate();
