@@ -1,6 +1,6 @@
 import './style.css'
 import * as THREE from 'three';
-
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 // scene, camera, renderer 생성
 const scene = new THREE.Scene();
@@ -12,6 +12,8 @@ document.getElementById('root').appendChild(renderer.domElement);
 // x축 (빨간색), y축 (녹색), z축 (파란색) 생성
 const axes = new THREE.AxesHelper(3000);
 scene.add(axes);
+
+const controls = new OrbitControls(camera, renderer.domElement);
 
 // 태양 생성
 const sunGeometry = new THREE.SphereGeometry(6, 32, 32);
@@ -94,7 +96,9 @@ function animate() {
 animate();
 
 /* camera 추가 */
-camera.position.x = 30;
-camera.position.y = 30;
-camera.position.z = 30;
-camera.lookAt(scene.position);
+// camera.position.x = 30;
+// camera.position.y = 30;
+// camera.position.z = 30;
+camera.position.set( 30, 30, 30 );
+
+controls.update();
