@@ -61,68 +61,8 @@ scene.add(uranus.getMesh());
 const neptune = new Planet(3.9, 1554, 0x808080, true);
 scene.add(neptune.getMesh());
 
-// mercury (수성)
-// const mercuryGeometry = new THREE.SphereGeometry(0.4, 32, 32);
-// const mercuryMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00, wireframe: true });
-// const mercury = new THREE.Mesh(mercuryGeometry, mercuryMaterial);
-// mercury.position.set(74, 0, 0);
-// scene.add(mercury);
-
-// venus (금성)
-// const venusGeometry = new THREE.SphereGeometry(0.9, 32, 32);
-// const venusMaterial = new THREE.MeshBasicMaterial({ color: 0x0000ff, wireframe: true });
-// const venus = new THREE.Mesh(venusGeometry, venusMaterial);
-// venus.position.set(89, 0, 0);
-// scene.add(venus);
-
-// earth (지구)
-// const earthGeometry = new THREE.SphereGeometry(1, 32, 32);
-// const earthMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: true });
-// const earth = new THREE.Mesh(earthGeometry, earthMaterial);
-// earth.position.set(104, 0, 0);
-// scene.add(earth);
-
-// mars (화성)
-// const marsGeometry = new THREE.SphereGeometry(0.5, 32, 32);
-// const marsMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000, wireframe: true });
-// const mars = new THREE.Mesh(marsGeometry, marsMaterial);
-// mars.position.set(125, 0, 0);
-// scene.add(mars);
-
-// jupiter (목성)
-// const jupiterGeometry = new THREE.SphereGeometry(11.2, 32, 32);
-// const jupiterMaterial = new THREE.MeshBasicMaterial({ color: 0xff8000, wireframe: true });
-// const jupiter = new THREE.Mesh(jupiterGeometry, jupiterMaterial);
-// jupiter.position.set(304, 0, 0);
-// scene.add(jupiter);
-
-// saturn (토성)
-// const saturnGeometry = new THREE.SphereGeometry(9.4, 32, 32);
-// const saturnMaterial = new THREE.MeshBasicMaterial({ color: 0xcccccc, wireframe: true });
-// const saturn = new THREE.Mesh(saturnGeometry, saturnMaterial);
-// saturn.position.set(554, 0, 0);
-// scene.add(saturn);
-
-// uranus (천왕성)
-// const uranusGeometry = new THREE.SphereGeometry(4, 32, 32);
-// const uranusMaterial = new THREE.MeshBasicMaterial({ color: 0x00ffff, wireframe: true });
-// const uranus = new THREE.Mesh(uranusGeometry, uranusMaterial);
-// uranus.position.set(1054, 0, 0);
-// scene.add(uranus);
-
-// neptune (해왕성)
-// const neptuneGeometry = new THREE.SphereGeometry(3.9, 32, 32);
-// const neptuneMaterial = new THREE.MeshBasicMaterial({ color: 0x808080, wireframe: true });
-// const neptune = new THREE.Mesh(neptuneGeometry, neptuneMaterial);
-// neptune.position.set(1554, 0, 0);
-// scene.add(neptune);
-
-
 /* camera 추가 */
-// camera.position.x = 30;
-// camera.position.y = 30;
-// camera.position.z = 30;
-camera.position.set( 0, 0, 2500 );
+camera.position.set( -450, 50, 200 );
 
 controls.update();
 
