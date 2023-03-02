@@ -21,7 +21,7 @@ scene.add(axes);
 const controls = new OrbitControls(camera, renderer.domElement);
 
 // 태양 생성
-const sun = new Sun(54, 0xfff600, true);
+const sun = new Sun(54, 0xfff600, true, 0.0001);
 sun.setPosition(0, 0, 0);
 scene.add(sun.getMesh());
 // const sunGeometry = new THREE.SphereGeometry(54, 400, 200);
