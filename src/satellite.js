@@ -1,9 +1,11 @@
 import * as THREE from 'three';
 
+// Satellite 생성
+// (반지름, 행성으로부터의 거리, 색깔, 와이어프레임, 자전 속도, 공전 속도)
 class Satellite {
-  constructor(radius, distanceFromPlanet, color, rotationSpeed, revolutionSpeed) {
+  constructor(radius, distanceFromPlanet, color, wireframe, rotationSpeed, revolutionSpeed) {
     const geometry = new THREE.SphereGeometry(radius, 32, 32);
-    const material = new THREE.MeshBasicMaterial({ color});
+    const material = new THREE.MeshBasicMaterial({ color, wireframe });
     this.mesh = new THREE.Mesh(geometry, material);
 
     // 행성을 기준으로 위성의 초기 위치 설정
@@ -26,7 +28,7 @@ class Satellite {
 
   update() {
     // 위성의 자전 업데이트
-    this.rotationAngle += this.rotationSpeed;
+    this.rotationAngle -= this.rotationSpeed;
     this.mesh.rotation.y = this.rotationAngle;
 
     // 행성 주변의 위성 위치 업데이트
@@ -34,3 +36,5 @@ class Satellite {
     this.mesh.position.z = Math.sin(this.orbitAngle) * this.distanceFromPlanet;
   }
 };
+
+export default Satellite;
