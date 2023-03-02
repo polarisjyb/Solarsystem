@@ -27,7 +27,7 @@ scene.add(sun.getMesh());
 // scene.add(sun);
 
 
-/* 행성 생성 (수, 금, 지, 화, 목, 토, 천, 해) */
+/* 행성 생성 (수, 금, 지(달), 화, 목, 토, 천, 해) */
 
 // mercury (수성)
 const mercury = new Planet(0.4, 74, 0xccff00, true);
@@ -38,7 +38,7 @@ const venus = new Planet(0.9, 89, 0x0000ff, true);
 scene.add(venus.getMesh());
 
 // earth (지구)
-const earth = new Planet(1, 104, 0x00ff00, true);
+const earth = new Planet(1, 104, 0x00ff00, true, 0.002, 0.002);
 scene.add(earth.getMesh());
 
 // mars (화성)
@@ -122,7 +122,7 @@ scene.add(neptune.getMesh());
 // camera.position.x = 30;
 // camera.position.y = 30;
 // camera.position.z = 30;
-camera.position.set( 0, 0, 400 );
+camera.position.set( 0, 0, 2500 );
 
 controls.update();
 
@@ -130,15 +130,8 @@ controls.update();
 const animate = () => {
   requestAnimationFrame(animate);
 
-  // sun.rotation.y += 0.00001;
-  // mercury.rotation.y += 0.01;
-  // venus.rotation.y += 0.01;
-  // earth.rotation.y += 0.01;
-  // mars.rotation.y += 0.01;
-  // jupiter.rotation.y += 0.01;
-  // saturn.rotation.y += 0.01;
-  // uranus.rotation.y += 0.01;
-  // neptune.rotation.y += 0.01;
+  earth.update();
+
 
   renderer.render(scene, camera);
 
