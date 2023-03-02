@@ -41,7 +41,7 @@ const venus = new Planet(0.9, 89, 0x0000ff, true);
 scene.add(venus.getMesh());
 
 // earth (지구)
-const earth = new Planet(1, 104, 0x00ff00, true, 0.002, 0.002);
+const earth = new Planet(1, 104, 0x00ff00, true, 0.005, 0.0002);
 scene.add(earth.getMesh());
 
 // mars (화성)
