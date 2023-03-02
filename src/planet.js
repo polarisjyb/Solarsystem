@@ -9,12 +9,14 @@ class Planet {
     this.mesh = new THREE.Mesh(geometry, material);
     this.mesh.position.set(distanceFromSun, 0, 0);
     
-    // 자전, 공전 속도
+    // 생성되는 인스턴스의 distanceFromSun 초기화 
     this.distanceFromSun = distanceFromSun;
 
+    // 행성의 자전 및 공전 속도 설정
     this.rotationSpeed = rotationSpeed;
     this.revolutionSpeed = revolutionSpeed;
 
+    // 행성의 공전 각도 초기화 값 0
     this.orbitAngle = 0;
     this.mesh.rotation.y = Math.PI / 2;
   }
@@ -24,7 +26,7 @@ class Planet {
   }
 
   update() {
-    this.orbitAngle += this.revolutionSpeed;
+    this.orbitAngle -= this.revolutionSpeed;
     this.mesh.position.x = Math.cos(this.orbitAngle) * this.distanceFromSun;
     this.mesh.position.z = Math.sin(this.orbitAngle) * this.distanceFromSun;
     
