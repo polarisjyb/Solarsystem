@@ -73,6 +73,7 @@ controls.update();
 const animate = () => {
   requestAnimationFrame(animate);
 
+  sun.update();
   earth.update();
 
 
