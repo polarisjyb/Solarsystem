@@ -44,6 +44,10 @@ scene.add(venus.getMesh());
 const earth = new Planet(1, 104, 0x00ff00, true, 0.005, 0.0002);
 scene.add(earth.getMesh());
 
+// moon (달)
+const moon = new Satellite(0.6, 3, 0xffffff, true, 0.01, 0.01);
+earth.getMesh().add(moon.getMesh());
+
 // mars (화성)
 const mars = new Planet(0.5, 125, 0xff0000, true);
 scene.add(mars.getMesh());
