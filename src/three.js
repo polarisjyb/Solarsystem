@@ -1,8 +1,11 @@
 import './style.css'
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import Planet from './planet';
+
+// 태양계 모듈
 import Sun from './sun';
+import Planet from './planet';
+import Satellite from './satellite';
 
 // scene, camera, renderer 생성
 const scene = new THREE.Scene();
