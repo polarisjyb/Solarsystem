@@ -24,14 +24,8 @@ const controls = new OrbitControls(camera, renderer.domElement);
 const sun = new Sun(54, 0xfff600, true, 0.0001);
 sun.setPosition(0, 0, 0);
 scene.add(sun.getMesh());
-// const sunGeometry = new THREE.SphereGeometry(54, 400, 200);
-// const sunMaterial = new THREE.MeshBasicMaterial({ color: 0xfff600, wireframe: true });
-// const sun = new THREE.Mesh(sunGeometry, sunMaterial);
-// scene.add(sun);
-
 
 /* 행성 생성 (수, 금, 지(달), 화, 목, 토, 천, 해) */
-
 // mercury (수성)
 const mercury = new Planet(0.4, 74, 0xccff00, true);
 scene.add(mercury.getMesh());
@@ -73,13 +67,12 @@ camera.position.set( -450, 50, 200 );
 
 controls.update();
 
-// 자전 애니메이션
+// 애니메이션
 const animate = () => {
   requestAnimationFrame(animate);
 
   sun.update();
   earth.update();
-
 
   renderer.render(scene, camera);
 
