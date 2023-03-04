@@ -38,6 +38,9 @@ class Planet {
     const orbitMaterial = new THREE.LineBasicMaterial({ color: color });
 
     this.orbit = new THREE.Line(orbitGeometry, orbitMaterial);
+
+    // 기본적으로 THREE.CircleGeometry 또는 THREE.EllipseCurve에서 생성된 THREE.Line 객체는 z축에 정렬되어 있으므로 x축을 중심으로 90도(π/2 라디안과 동일) 회전해야 한다. 
+    // 태양계 행성의 궤도 평면인 x-z 평면에 평평하게 놓이도록 설정 (x축과 z축에 맞닿는 평면)
     this.orbit.rotation.x = Math.PI / 2;
 
     // 공전 궤도 위치 설정
