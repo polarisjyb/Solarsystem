@@ -1,5 +1,5 @@
 {
-  "name": "setup-three.js-webpack",
+  "name": "solarsystem",
   "version": "1.0.0",
   "description": "three.js 와 webpack 개발 환경 설정을 하기 위해 만들었습니다.",
   "main": "three.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/polarisjyb/setup-three.js-webpack.git"
+    "url": "git+https://github.com/polarisjyb/Solarsystem.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/polarisjyb/setup-three.js-webpack/issues"
+    "url": "https://github.com/polarisjyb/Solarsystem/issues"
   },
-  "homepage": "https://github.com/polarisjyb/setup-three.js-webpack#readme",
+  "homepage": "https://github.com/polarisjyb/Solarsystem#readme",
   "devDependencies": {
     "@babel/cli": "^7.20.7",
     "@babel/core": "^7.20.12",
