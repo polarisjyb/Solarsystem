@@ -34,7 +34,6 @@ const mercury = new Planet(0.4, 74, 0xccff00, true, 0.005, 0.003);
 scene.add(mercury.getMesh());
 scene.add(mercury.getOrbit());
 
-
 // venus (금성)
 const venus = new Planet(0.9, 89, 0x0000ff, true, 0.005, 0.003);
 scene.add(venus.getMesh());
@@ -59,18 +58,15 @@ const jupiter = new Planet(11.2, 304, 0xff8000, true, 0.005, 0.003);
 scene.add(jupiter.getMesh());
 scene.add(jupiter.getOrbit());
 
-
 // saturn (토성)
 const saturn = new Planet(9.4, 554, 0xcccccc, true, 0.005, 0.003);
 scene.add(saturn.getMesh());
 scene.add(saturn.getOrbit());
 
-
 // uranus (천왕성)
 const uranus = new Planet(4, 1054, 0x00ffff, true, 0.005, 0.003);
 scene.add(uranus.getMesh());
 scene.add(uranus.getOrbit());
-
 
 // neptune (해왕성)
 const neptune = new Planet(3.9, 1554, 0x808080, true, 0.005, 0.003);
