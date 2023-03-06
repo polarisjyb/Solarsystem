@@ -105,3 +105,17 @@ threejs-3 브랜치에서 plane (평면 바닥)을 삭제하고 간단하게 회
 
 6. React.js 작업 진행 예정(추후)
 - react.js에서 지원하는 react-three-fiber 를 활용하여 작업 예정
+
+-------------------------------------------------------
+23/03/06
+
+1. BufferGeometry를 이용한 은하계 배경 생성 
+
+- BufferGeometry - three.js의 모든 Geometry들을 구성하는 방식으로 BufferAttributes 라는 데이터 배열들의 집합으로 구성된다.
+BoxGeometry(정육면체) 나 PlaneGeometry(평면체) 등은 이미 데이터가 세팅이 되어있는 Geometry들이라면,
+BufferGeometry는 사용자가 데이터를 생성해서 커스텀할 수 있는 Geometry라고 볼 수 있다.
+
+Geometry는 기본적으로 정점(Vertex)들의 집합이다. 그 정점에 속성을 부여해서 특정한 형태와 속성을 가진 Geometry를 만들 수 있다.
+BufferAttributes는 바로 이 속성값을 부여하는데 사용된다.
+
+- 애니메이션 효과 개선이나 모듈화 작업 등 추가 수정이 더 필요할 듯 하다.
