@@ -18,8 +18,8 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('root').appendChild(renderer.domElement);
 
 // x축 (빨간색), y축 (녹색), z축 (파란색) 생성
-const axes = new THREE.AxesHelper(3000);
-scene.add(axes);
+// const axes = new THREE.AxesHelper(3000);
+// scene.add(axes);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 
