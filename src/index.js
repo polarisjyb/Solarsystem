@@ -73,6 +73,65 @@ const neptune = new Planet(3.9, 1554, 0x808080, true, 0.005, 0.003);
 scene.add(neptune.getMesh());
 scene.add(neptune.getOrbit());
 
+/*
+BufferGeometry - three.js의 모든 Geometry들을 구성하는 방식으로 BufferAttributes 라는 데이터 배열들의 집합으로 구성된다.
+BoxGeometry(정육면체) 나 PlaneGeometry(평면체) 등은 이미 데이터가 세팅이 되어있는 Geometry들이라면,
+BufferGeometry는 사용자가 데이터를 생성해서 커스텀할 수 있는 Geometry라고 볼 수 있다.
+
+Geometry는 기본적으로 정점(Vertex)들의 집합이다. 그 정점에 속성을 부여해서 특정한 형태와 속성을 가진 Geometry를 만들 수 있다.
+BufferAttributes는 바로 이 속성값을 부여하는데 사용된다.
+*/
+
+const parameters = {};
+parameters.count = 10000;
+parameters.size = 1;
+
+// generateGalaxy - 은하의 모양을 묘사하는 BufferGeometry 개체를 생성
+const generateGalaxy = () => {
+  const geometry = new THREE.BufferGeometry();
+
+  const positions = new Float32Array(parameters.count * 3);
+
+  for (let i = 0; i < parameters.count; i++) {
+    const i3 = i * 3;
+
+    positions[i3] = (Math.random() - 0.5) * 10000;
+    positions[i3 + 1] = (Math.random() - 0.5) * 10000;
+    positions[i3 + 2] = (Math.random() - 0.5) * 10000;
+  };
+
+  geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+
+  const material = new THREE.PointsMaterial({
+
+    // point의 크기를 픽셀 단위로 정의 (기본값 - 1.0)
+    size: parameters.size,
+
+    // point의 크기가 카메라 심도에 의해 감쇠되는지 여부를 지정 (기본값 - true)
+    sizeAttenuation: true,
+  });
+
+  const points = new THREE.Points(geometry, material);
+  scene.add(points);
+
+  const GalaxyAnimation = () => {
+    points.rotation.x += Math.random() * 0.001;
+    points.rotation.y += Math.random() * 0.001;
+    points.rotation.z -= Math.random() * 0.001;
+  }
+
+  // 애니메이션
+  const animate = () => {
+    requestAnimationFrame(animate);
+
+    GalaxyAnimation();
+
+    renderer.render(scene, camera);
+  };
+  animate();
+};
+
+generateGalaxy();
 
 /* camera 추가 */
 camera.position.set( -450, 50, 200 );
