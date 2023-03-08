@@ -30,47 +30,63 @@ scene.add(sun.getMesh());
 
 /* 행성 생성 (수, 금, 지(달), 화, 목, 토, 천, 해) */
 // mercury (수성)
-const mercury = new Planet(0.4, 74, 0xccff00, true, 0.005, 0.003);
-scene.add(mercury.getMesh());
+const mercury = new Planet(0.4, 74, 0xccff00, true, 0.005, 0.0009);
+sun.getMesh().add(mercury.getMesh());
+
+// scene.add(mercury.getMesh());
 scene.add(mercury.getOrbit());
 
 // venus (금성)
-const venus = new Planet(0.9, 89, 0x0000ff, true, 0.005, 0.003);
-scene.add(venus.getMesh());
+const venus = new Planet(0.9, 89, 0x0000ff, true, 0.005, 0.0003);
+sun.getMesh().add(venus.getMesh());
+
+// scene.add(venus.getMesh());
 scene.add(venus.getOrbit());
 
 // earth (지구)
-const earth = new Planet(1, 104, 0x00ff00, true, 0.005, 0.003);
-scene.add(earth.getMesh());
+const earth = new Planet(5, 104, 0x00ff00, true, 0.005, 0.0003);
+sun.getMesh().add(earth.getMesh());
+
+// scene.add(earth.getMesh());
 scene.add(earth.getOrbit());
 
 // moon (달)
-const moon = new Satellite(0.6, 3, 0xffffff, true, 0.01, 0.01);
+const moon = new Satellite(0.6, 10, 0xffffff, true, 0.01, 0.01);
 earth.getMesh().add(moon.getMesh());
 
 // mars (화성)
-const mars = new Planet(0.5, 125, 0xff0000, true, 0.005, 0.003);
-scene.add(mars.getMesh());
+const mars = new Planet(5, 125, 0xff0000, true, 0.005, 0.0003);
+sun.getMesh().add(mars.getMesh());
+
+// scene.add(mars.getMesh());
 scene.add(mars.getOrbit());
 
 // jupiter (목성)
 const jupiter = new Planet(11.2, 304, 0xff8000, true, 0.005, 0.003);
-scene.add(jupiter.getMesh());
+sun.getMesh().add(jupiter.getMesh());
+
+// scene.add(jupiter.getMesh());
 scene.add(jupiter.getOrbit());
 
 // saturn (토성)
 const saturn = new Planet(9.4, 554, 0xcccccc, true, 0.005, 0.003);
-scene.add(saturn.getMesh());
+sun.getMesh().add(saturn.getMesh());
+
+// scene.add(saturn.getMesh());
 scene.add(saturn.getOrbit());
 
 // uranus (천왕성)
 const uranus = new Planet(4, 1054, 0x00ffff, true, 0.005, 0.003);
-scene.add(uranus.getMesh());
+sun.getMesh().add(uranus.getMesh());
+
+// scene.add(uranus.getMesh());
 scene.add(uranus.getOrbit());
 
 // neptune (해왕성)
 const neptune = new Planet(3.9, 1554, 0x808080, true, 0.005, 0.003);
-scene.add(neptune.getMesh());
+sun.getMesh().add(neptune.getMesh());
+
+// scene.add(neptune.getMesh());
 scene.add(neptune.getOrbit());
 
 /*
