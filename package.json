@@ -2,7 +2,7 @@
   "name": "solarsystem",
   "version": "1.0.0",
   "description": "three.js 와 webpack 개발 환경 설정을 하기 위해 만들었습니다.",
-  "main": "three.js",
+  "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --config config/webpack.dev.js",
     "build": "webpack --config config/webpack.prod.js"
