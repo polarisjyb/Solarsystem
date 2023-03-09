@@ -447,3 +447,44 @@ function Clouder(params) {
 function asPixels(number) {
   return number + 'px';
 } // asPixels
+
+const init = () => {
+    const root = document.getElementById("root");
+  
+    document.body.style = `
+      margin: 0;
+      padding: 0;
+      font-family: Impact;
+    `;
+      
+      root.style = `
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      height: 100vh;
+      background-color: #0f0f0f;
+    `;
+  
+    const clouder = createClouder();
+    root.appendChild(clouder);
+  
+    const clouderObj = new Clouder({
+      container: clouder,
+      tags: createTags(),
+    });
+  };
+  
+  const createClouder = () => {
+    const clouder = document.createElement("div");
+    clouder.style = `
+      width: 100%;
+      height: 100%;
+      position: relative;
+    `;
+    return clouder;
+  };
+  
+  const createTags = () => [  { text: "About", weight: 0.1 },  { text: "Portfolio", weight: 0.1 },  { text: "Contact", weight: 0.1 },  { text: "Home", weight: 0.1 },  { text: "stack", weight: 0.1 },  { text: "Contact", weight: 0.1 },  { text: "stack", weight: 0.1 },  { text: "About", weight: 0.1 },  { text: "Home", weight: 0.1 },  { text: "Portfolio", weight: 0.1 },];
+  
+  window.addEventListener("load", init);
