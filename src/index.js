@@ -13,6 +13,10 @@ import Satellite from './satellite';
 // scene, camera, renderer 생성
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10000);
+
+/* camera 추가 */
+camera.position.set( -450, 50, 200 );
+
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('root').appendChild(renderer.domElement);
@@ -22,6 +26,8 @@ document.getElementById('root').appendChild(renderer.domElement);
 // scene.add(axes);
 
 const controls = new OrbitControls(camera, renderer.domElement);
+
+controls.update();
 
 // 배경 텍스처 이미지 로드
 const textureLoader = new THREE.TextureLoader();
@@ -171,11 +177,6 @@ scene.add(neptune.getOrbit());
 // };
 
 // generateGalaxy();
-
-/* camera 추가 */
-camera.position.set( -450, 50, 200 );
-
-controls.update();
 
 // 애니메이션
 const animate = () => {
