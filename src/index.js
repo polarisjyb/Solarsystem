@@ -23,6 +23,29 @@ document.getElementById('root').appendChild(renderer.domElement);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 
+// 배경 텍스처 이미지 로드
+const textureLoader = new THREE.TextureLoader();
+const texture = textureLoader.load('../public/img/galaxy.jpg');
+
+// 배경으로 사용할 SphereGeometry 생성
+const sphereGeometry = new THREE.SphereGeometry(5000, 50, 50);
+
+// 텍스처를 배경 material 로 설정
+const material = new THREE.MeshBasicMaterial({
+
+  // 렌더링할 면의 면을 정의 (앞, 뒤 또는 둘 다)
+  // 기본 값은 THREE.FrontSide - 앞면 그 외의 옵션은 THREE.BackSide(뒷면) or THREE.DoubleSide (앞, 뒷면)
+  side: THREE.BackSide,
+  map: texture,
+});
+
+// 배경에 적용할 mesh 생성
+const background = new THREE.Mesh(sphereGeometry, material);
+background.rotation.x = (Math.PI/180*63);
+
+// scene 에 mesh 추가
+scene.add(background);
+
 // 태양 생성
 const sun = new Sun(54, 0xfff600, true, 0.0001);
 sun.setPosition(0, 0, 0);
