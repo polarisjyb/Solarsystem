@@ -27,6 +27,13 @@ document.getElementById('root').appendChild(renderer.domElement);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 
+// enableDamping = true
+// OrbitControls 컨트롤에 무게감을 부여하는데 사용할 수 있는 관성. 이 기능을 사용하도록 설정할 경우, 애니메이션 루프에서 controls.update 메소드를 호출해야 한다.
+controls.enableDamping = true;
+
+// dampingFactor - enableDamping 이 true 일 경우 적용 가능 - 값이 낮을 수록 컨트롤에 느껴지는 무게감이 증가한다.
+controls.dampingFactor = 0.05;
+
 // 배경 텍스처 이미지 로드
 const textureLoader = new THREE.TextureLoader();
 const texture = textureLoader.load('../public/img/galaxy.jpg');
