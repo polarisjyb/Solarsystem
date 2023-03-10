@@ -35,7 +35,7 @@ class Planet {
 
     const orbitPoints = orbitCurve.getPoints(100);
     const orbitGeometry = new THREE.BufferGeometry().setFromPoints(orbitPoints);
-    const orbitMaterial = new THREE.LineBasicMaterial({ color: color });
+    const orbitMaterial = new THREE.LineBasicMaterial();
 
     this.orbit = new THREE.Line(orbitGeometry, orbitMaterial);
 
