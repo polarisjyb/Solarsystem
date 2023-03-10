@@ -14,8 +14,6 @@ import Satellite from './satellite';
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 10, 20000);
 
-console.log(camera.far)
-
 /* camera 추가 */
 camera.position.set( -450, 50, 200 );
 
@@ -28,8 +26,6 @@ document.getElementById('root').appendChild(renderer.domElement);
 // scene.add(axes);
 
 const controls = new OrbitControls(camera, renderer.domElement);
-
-controls.update();
 
 // 배경 텍스처 이미지 로드
 const textureLoader = new THREE.TextureLoader();
@@ -194,6 +190,8 @@ const animate = () => {
   saturn.update();
   uranus.update();
   neptune.update();
+
+  controls.update();
 
   renderer.render(scene, camera);
 
