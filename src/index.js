@@ -2,8 +2,7 @@ import './style.css'
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-// webpack build 테스트용
-// import "../public/img/d.jpg"
+import "../public/img/galaxy.jpg"
 
 // 태양계 모듈
 import Sun from './sun';
