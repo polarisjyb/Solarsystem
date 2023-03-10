@@ -12,7 +12,9 @@ import Satellite from './satellite';
 
 // scene, camera, renderer 생성
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10000);
+const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 10, 20000);
+
+console.log(camera.far)
 
 /* camera 추가 */
 camera.position.set( -450, 50, 200 );
