@@ -153,3 +153,20 @@ BufferAttributes는 바로 이 속성값을 부여하는데 사용된다.
 
 3. TagCloud 생성 함수 코드 분석 및 수정, 모듈화 작업은 수시로 진행할 예정
 
+-------------------------------------------------------
+23/03/10
+
+1. TextureLoader
+- TextureLoader를 사용하여 배경 이미지 로드 및 SphereGeometry로 구체형 배경 적용
+- 은하 배경 이미지 추가 (dark.jpg, galaxy.jpg)
+
+2. 간단한 수정
+- BuggerGeometry를 이용한 particle 효과 코드 주석 처리
+- 각 행성의 공전 궤도 선을 기본 컬러로 설정 - 기본 컬러 : 0xffffff
+- camera.position.set() 코드를 상위 줄로 변경
+- camera - PerspectiveCamera(fov, near, far 값 조정)
+- 불필요한 이미지 삭제 및 코드 제거
+
+3. 코드 모듈화는 수시로 진행 예정
+
+4. 태양과 각 행성의 텍스처 작업 진행 예정
