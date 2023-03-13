@@ -3,9 +3,10 @@ import * as THREE from 'three';
 // Satellite 생성
 // (반지름, 행성으로부터의 거리, 색깔, 와이어프레임, 자전 속도, 공전 속도)
 class Satellite {
-  constructor(radius, distanceFromPlanet, color, wireframe, rotationSpeed, revolutionSpeed) {
+  constructor(radius, distanceFromPlanet, textureUrl, rotationSpeed, revolutionSpeed) {
+    const texture = new THREE.TextureLoader().load(textureUrl);
     const geometry = new THREE.SphereGeometry(radius, 32, 32);
-    const material = new THREE.MeshBasicMaterial({ color, wireframe });
+    const material = new THREE.MeshBasicMaterial({ map: texture });
     this.mesh = new THREE.Mesh(geometry, material);
 
     // 행성을 기준으로 위성의 초기 위치 설정
