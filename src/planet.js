@@ -3,9 +3,10 @@ import * as THREE from 'three';
 // Planet 생성
 // (반지름, 태양으로부터의 거리, 색깔, 와이어프레임, 자전 속도, 공전 속도)
 class Planet {
-  constructor(radius, distanceFromSun, color, wireframe, rotationSpeed, revolutionSpeed) {
+  constructor(radius, distanceFromSun, textureUrl, rotationSpeed, revolutionSpeed) {
+    const texture = new THREE.TextureLoader().load(textureUrl);
     const geometry = new THREE.SphereGeometry(radius, 32, 32);
-    const material = new THREE.MeshBasicMaterial({ color, wireframe });
+    const material = new THREE.MeshBasicMaterial({ map: texture });
     this.mesh = new THREE.Mesh(geometry, material);
     this.mesh.position.set(distanceFromSun, 0, 0);
     
