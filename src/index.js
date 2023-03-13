@@ -78,14 +78,14 @@ scene.add(sun.getMesh());
 
 /* 행성 생성 (수, 금, 지(달), 화, 목, 토, 천, 해) */
 // mercury (수성)
-const mercury = new Planet(0.4, 74, '../public/img/mercury.jpg', 0.005, 0.0009);
+const mercury = new Planet(3, 74, '../public/img/mercury.jpg', 0.005, 0.0003);
 sun.getMesh().add(mercury.getMesh());
 
 // scene.add(mercury.getMesh());
 scene.add(mercury.getOrbit());
 
 // venus (금성)
-const venus = new Planet(0.9, 89, '../public/img/venus.jpg', 0.005, 0.0003);
+const venus = new Planet(4, 89, '../public/img/venus.jpg', 0.005, 0.0003);
 sun.getMesh().add(venus.getMesh());
 
 // scene.add(venus.getMesh());
@@ -99,7 +99,7 @@ sun.getMesh().add(earth.getMesh());
 scene.add(earth.getOrbit());
 
 // moon (달)
-const moon = new Satellite(0.6, 8, '../public/img/moon.jpg', 0.01, 0.01);
+const moon = new Satellite(1, 8, '../public/img/moon.jpg', 0.01, 0.01);
 earth.getMesh().add(moon.getMesh());
 
 // mars (화성)
