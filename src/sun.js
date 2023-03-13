@@ -1,15 +1,20 @@
 import * as THREE from 'three';
 
+import '../public/img/sun.jpg';
+
 // Sun 생성 (반지름, 색깔, 와이어프레임, 자전 속도)
 class Sun {
-  constructor(radius, color, wireframe, rotationSpeed) {
+  constructor(radius, rotationSpeed) {
+    const Texture = new THREE.TextureLoader().load('../public/img/sun.jpg');
     const geometry = new THREE.SphereGeometry(radius, 32, 32);
-    const material = new THREE.MeshBasicMaterial({ color, wireframe });
+    const material = new THREE.MeshBasicMaterial({ map: Texture });
     this.mesh = new THREE.Mesh(geometry, material);
 
     // 태양의 자전 및 각도 초기화
     this.rotationAngle = 0;
     this.rotationSpeed = rotationSpeed;
+
+
   }
 
   getMesh() {
