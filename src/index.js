@@ -3,6 +3,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 import "../public/img/galaxy.jpg"
+// import "../public/img/milky_way.jpg"
 
 // 태양계 모듈
 import Sun from './sun';
@@ -57,7 +58,7 @@ background.rotation.x = (Math.PI/180*63);
 scene.add(background);
 
 // 태양 생성
-const sun = new Sun(54, 0xfff600, true, 0.0001);
+const sun = new Sun(54, 0.0001);
 sun.setPosition(0, 0, 0);
 scene.add(sun.getMesh());
 
