@@ -12,6 +12,10 @@ npm install
 
 npm run dev
 
+video link
+
+https://youtu.be/Mb5HdgkJVsw
+
 -------------------------------------------------------
 23/01/10
 
