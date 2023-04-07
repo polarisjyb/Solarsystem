@@ -72,66 +72,65 @@ background.rotation.x = (Math.PI/180*63);
 scene.add(background);
 
 // 태양 생성
-const sun = new Sun(54, 0.0001);
+const sun = new Sun(54, 0.0004);
 sun.setPosition(0, 0, 0);
 scene.add(sun.getMesh());
 
 /* 행성 생성 (수, 금, 지(달), 화, 목, 토, 천, 해) */
 // mercury (수성)
-const mercury = new Planet(3, 74, '../public/img/mercury.jpg', 0.005, 0.0003);
+const mercury = new Planet(3, 74, '../public/img/mercury.jpg', 0.005, 0.005);
 sun.getMesh().add(mercury.getMesh());
 
 // scene.add(mercury.getMesh());
 scene.add(mercury.getOrbit());
 
 // venus (금성)
-const venus = new Planet(4, 89, '../public/img/venus.jpg', 0.005, 0.0003);
+const venus = new Planet(4, 89, '../public/img/venus.jpg', 0.005, 0.004);
 sun.getMesh().add(venus.getMesh());
 
 // scene.add(venus.getMesh());
 scene.add(venus.getOrbit());
 
 // earth (지구)
-const earth = new Planet(5, 104, '../public/img/earth.jpg', 0.005, 0.0003);
+const earth = new Planet(5, 104, '../public/img/earth.jpg', 0.02, 0.003);
 sun.getMesh().add(earth.getMesh());
 
-// scene.add(earth.getMesh());
 scene.add(earth.getOrbit());
 
 // moon (달)
-const moon = new Satellite(1, 8, '../public/img/moon.jpg', 0.01, 0.01);
+const moon = new Satellite(1, 10, '../public/img/moon.jpg');
 earth.getMesh().add(moon.getMesh());
 
 // mars (화성)
-const mars = new Planet(5, 125, '../public/img/mars.jpg', 0.005, 0.0003);
+const mars = new Planet(5, 125, '../public/img/mars.jpg', 0.005, 0.002);
 sun.getMesh().add(mars.getMesh());
 
 // scene.add(mars.getMesh());
 scene.add(mars.getOrbit());
 
 // jupiter (목성)
-const jupiter = new Planet(11.2, 304, '../public/img/jupiter.jpg', 0.005, 0.0003);
+const jupiter = new Planet(11.2, 304, '../public/img/jupiter.jpg', 0.005, 0.001);
 sun.getMesh().add(jupiter.getMesh());
 
 // scene.add(jupiter.getMesh());
 scene.add(jupiter.getOrbit());
 
 // saturn (토성)
-const saturn = new Planet(9.4, 554, '../public/img/saturn.jpg', 0.005, 0.0003);
+const saturn = new Planet(9.4, 554, '../public/img/saturn.jpg', 0.005, 0.0009);
 sun.getMesh().add(saturn.getMesh());
 
 // scene.add(saturn.getMesh());
 scene.add(saturn.getOrbit());
 
 // uranus (천왕성)
-const uranus = new Planet(4, 1054, '../public/img/uranus.jpg', 0.005, 0.0003);
+const uranus = new Planet(6, 1054, '../public/img/uranus.jpg', 0.005, 0.0006);
 sun.getMesh().add(uranus.getMesh());
 
 // scene.add(uranus.getMesh());
 scene.add(uranus.getOrbit());
 
 // neptune (해왕성)
-const neptune = new Planet(3.9, 1554, '../public/img/neptune.jpg', 0.005, 0.0003);
+const neptune = new Planet(6, 1554, '../public/img/neptune.jpg', 0.005, 0.0005);
 sun.getMesh().add(neptune.getMesh());
 
 // scene.add(neptune.getMesh());
